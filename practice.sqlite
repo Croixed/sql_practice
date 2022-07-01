@@ -1,0 +1,112 @@
+-- step 1 is just s prerequisite
+
+-- step 2:
+SELECT email_domain, COUNT(*) FROM users 
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 2;
+
+SELECT city, COUNT(*) FROM users
+WHERE city IS 'New York';
+
+SELECT count(mobile_app) FROM users
+WHERE mobile_app IS 'mobile-user';
+
+-- step 3: 
+SELECT strftime('%H', sign_up_at) AS 'hour', 
+   COUNT(*) AS '# of signups'
+FROM users
+WHERE sign_up_at IS NOT NULL
+GROUP BY 1
+ORDER BY 1;
+
+--step 4:
+
+
+WITH totals AS (
+  SELECT * FROM users LEFT JOIN progress
+  ON users.user_id = progress.user_id
+),
+learners AS(SELECT user_id,
+  CASE
+    WHEN totals.learn_cpp = 'completed' OR totals.learn_cpp = 'started' THEN 1 ELSE 0 END AS learns_cpp,
+  CASE
+    WHEN totals.learn_sql = 'completed' OR totals.learn_sql = 'started' THEN 1 ELSE 0 END AS learns_sql,
+  CASE 
+    WHEN totals.learn_html = 'completed' OR totals.learn_html = 'started' THEN 1 ELSE 0 END AS learns_html,
+  CASE
+    WHEN totals.learn_javascript = 'completed' OR totals.learn_javascript = 'started' THEN 1 ELSE 0 END AS learns_JS,
+  CASE
+    WHEN totals.learn_java = 'completed' OR totals.learn_java = 'started' THEN 1 ELSE 0 END AS learns_java
+  FROM totals
+) 
+
+SELECT totals.email_domain, SUM(learns_cpp), SUM(learns_sql), SUM(learns_html), SUM(learns_JS), SUM(learns_java)
+FROM totals
+
+LEFT JOIN learners ON totals.user_id = learners.user_id
+GROUP BY totals.email_domain
+LIMIT 20
+;
+
+WITH totals AS (
+  SELECT * FROM users LEFT JOIN progress
+  ON users.user_id = progress.user_id
+),
+learners AS(SELECT user_id,
+  CASE
+    WHEN totals.learn_cpp = 'completed' OR totals.learn_cpp = 'started' THEN 1 ELSE 0 END AS learns_cpp,
+  CASE
+    WHEN totals.learn_sql = 'completed' OR totals.learn_sql = 'started' THEN 1 ELSE 0 END AS learns_sql,
+  CASE 
+    WHEN totals.learn_html = 'completed' OR totals.learn_html = 'started' THEN 1 ELSE 0 END AS learns_html,
+  CASE
+    WHEN totals.learn_javascript = 'completed' OR totals.learn_javascript = 'started' THEN 1 ELSE 0 END AS learns_JS,
+  CASE
+    WHEN totals.learn_java = 'completed' OR totals.learn_java = 'started' THEN 1 ELSE 0 END AS learns_java
+  FROM totals
+) 
+
+SELECT totals.email_domain, SUM(learns_cpp), SUM(learns_sql), SUM(learns_html), SUM(learns_JS), SUM(learns_java)
+FROM totals
+
+LEFT JOIN learners ON totals.user_id = learners.user_id
+GROUP BY totals.email_domain
+HAVING totals.city = 'New York'
+;
+
+WITH totals AS (
+  SELECT * FROM users LEFT JOIN progress
+  ON users.user_id = progress.user_id
+),
+learners AS(SELECT user_id,
+  CASE
+    WHEN totals.learn_cpp = 'completed' OR totals.learn_cpp = 'started' THEN 1 ELSE 0 END AS learns_cpp,
+  CASE
+    WHEN totals.learn_sql = 'completed' OR totals.learn_sql = 'started' THEN 1 ELSE 0 END AS learns_sql,
+  CASE 
+    WHEN totals.learn_html = 'completed' OR totals.learn_html = 'started' THEN 1 ELSE 0 END AS learns_html,
+  CASE
+    WHEN totals.learn_javascript = 'completed' OR totals.learn_javascript = 'started' THEN 1 ELSE 0 END AS learns_JS,
+  CASE
+    WHEN totals.learn_java = 'completed' OR totals.learn_java = 'started' THEN 1 ELSE 0 END AS learns_java
+  FROM totals
+) 
+
+SELECT totals.email_domain, SUM(learns_cpp), SUM(learns_sql), SUM(learns_html), SUM(learns_JS), SUM(learns_java)
+FROM totals
+
+LEFT JOIN learners ON totals.user_id = learners.user_id
+GROUP BY totals.email_domain
+HAVING totals.city = 'Chicago'
+;
+
+
+
+
+
+
+
+
+
+
