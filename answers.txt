@@ -1,0 +1,123 @@
+1. 
+top 25 schools:
+
+ucsd.edu	193
+cps.edu	55
+ku.edu	50
+vt.edu	40
+oregonstate.edu	38
+msu.edu	33
+strathmore.edu	29
+umich.edu	25
+u.northwestern.edu	25
+nyu.edu	23
+pace.edu	22
+asu.edu	22
+berkeley.edu	18
+ucdavis.edu	17
+husky.neu.edu	16
+drexel.edu	16
+baylor.edu	16
+g.ucla.edu	15
+utexas.edu	13
+ucsc.edu	13
+monmouth.edu	13
+case.edu	13
+uw.edu	12
+usc.edu	12
+tamu.edu	12
+
+2.
+# of NY students: 
+
+50
+
+3.
+# of mobile app users: 
+
+330
+
+4.
+hr:	# of signups:
+
+00	100
+01	93
+02	73
+03	84
+04	74
+05	29
+06	30
+07	16
+08	18
+09	9
+10	10
+11	13
+12	27
+13	80
+14	101
+15	103
+16	183
+17	174
+18	185
+19	147
+20	138
+21	104
+22	105
+23	104
+
+5. 
+types of course takers per domain, limited to 20:
+
+email_domain	SUM(learns_cpp)	SUM(learns_sql)	SUM(learns_html)	SUM(learns_JS)	SUM(learns_java)
+aa.edu	1	1	1	1	0
+aauni.edu	1	0	0	0	0
+acu.edu	2	1	0	1	0
+africau.edu	1	1	1	1	0
+aggies.ncat.edu	2	3	2	3	0
+aii.edu	0	0	1	1	0
+alaska.edu	2	2	2	1	1
+albany.edu	1	2	0	2	1
+albertus.edu	1	1	0	1	0
+alcorn.edu	0	0	1	1	0
+allegheny.edu	0	0	0	0	0
+alliant.edu	1	0	0	1	0
+alumni.baylor.edu	0	0	0	1	0
+alumni.cmu.edu	0	0	0	1	0
+alumni.mib.edu	1	1	1	1	0
+alumni.mondragon.edu	0	0	0	1	0
+alumni.scu.edu	0	1	0	1	0
+alumni.stanford.edu	0	1	0	0	0
+alumno.utesa.edu	1	2	1	2	0
+andrew.cmu.edu	1	0	0	3	1
+
+6. 
+NY students:
+
+email_domain	SUM(learns_cpp)	SUM(learns_sql)	SUM(learns_html)	SUM(learns_JS)	SUM(learns_java)
+alumni.cmu.edu	0	0	0	1	0
+baruchmail.cuny.edu	1	0	2	1	1
+binghamton.edu	3	4	1	4	0
+bths.edu	0	0	0	1	0
+bxscience.edu	2	3	3	2	0
+dwight.edu	1	2	0	2	0
+gradcenter.cuny.edu	0	1	0	0	0
+myhunter.cuny.edu	1	1	1	1	0
+nyu.edu	9	12	6	14	4
+princeton.edu	0	1	0	0	1
+studeny.cuny.edu	1	1	1	1	1
+sva.edu	1	2	1	3	0
+tigermail.qcc.cuny.edu	0	1	0	0	0
+
+7.  
+chicago students:
+
+email_domain	SUM(learns_cpp)	SUM(learns_sql)	SUM(learns_html)	SUM(learns_JS)	SUM(learns_java)
+acu.edu	2	1	0	1	0
+chicagobooth.edu	0	0	1	1	0
+cps.edu	23	28	16	25	13
+hawk.iit.edu	2	3	2	5	1
+iit.edu	0	1	0	0	0
+miamioh.edu	3	6	2	5	1
+u.northwestern.edu	9	9	7	9	5
+uic.edu	1	1	1	1	1
+valpo.edu	1	1	1	1	0
